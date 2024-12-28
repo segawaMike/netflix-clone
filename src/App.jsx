@@ -14,11 +14,9 @@ const App = () => {
   useEffect(()=>{
     onAuthStateChanged(auth, async (user) =>{
       if (user) {
-        console.log("logged in");
-        navigate('/');
+        navigate('/netflix-clone/');
       } else {
-        console.log("logged out");
-        navigate('/login');
+        navigate('/netflix-clone/login');
       }
     })
   }, []);
@@ -27,9 +25,9 @@ const App = () => {
     <div>
       <ToastContainer theme='dark'/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/player/:id' element={<Player/>}/>
+        <Route path='/netflix-clone/' element={<Home/>}/>
+        <Route path='/netflix-clone/login' element={<Login/>}/>
+        <Route path='/netflix-clone/player/:id' element={<Player/>}/>
       </Routes>
     </div>
   )
